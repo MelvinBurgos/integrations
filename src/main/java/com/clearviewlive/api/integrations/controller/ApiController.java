@@ -15,7 +15,7 @@ public class ApiController {
     private FileService fileService;
 
     @GetMapping()
-    public List<TicketNew> getAllTickets()
+    public String getAllTickets()
     {
         return fileService.getAllTickets();
     }
