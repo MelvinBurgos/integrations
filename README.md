@@ -6,14 +6,18 @@
 - el manejador de paquetes es Gradle 7.4.1
 - Usa la versión 17.0.2 2022-01-18 LTS de la JVM, Si se desea usar otra version es necesario hacer el cambio en archivo build.gradle y en las propiedades del proyecto.
 - El archivo de pruebas NO se incluye en el paquete. Es necesario colocar la dirección de la carpeta directamente en la propiedad url.archive
-- 
-### Los siguientes paquetes y dependencias son agregados por gradle.
+### Clonado/Desacarga del código a su IDE.
+- el programa debe ser descargado (clonado) y montado en el IDE de su preferencia.
+- una vez cargado debe actualizar las dependencias y cambiar en el archivo "application.properties", la propiedad "url.archive" con la ubicación del archivo de pruebas     "IntegrationTest.json".
+
+* Los siguientes paquetes y dependencias son agregados por gradle.
 - La aplicación está construida con Spring Boot 2 y Spring Framework 5.
 - Se usó el paquete Gson 2.9.0 y OpenCSV 5.6 por ser un paquetes sin problemas de seguridad y vigentes.
 
 ## Indicaciones de uso.
-- el programa debe ser descargado y montado en el IDE de su preferencia.
-- una vez cargado debe actualizar las dependencias y cambiar en el archivo "application.properties", la propiedad "url.archive" con la ubicación del archivo de pruebas     "IntegrationTest.json".
+- La aplicación es una API Web con dos Métodos HTTP, ambos en la misma URL.
+-   Get  :  http://localhost:9090/api
+-   Post :  http://localhost:9090/api  es necesario acompañar la ejecución con el contenido JSON a procesar en el Body raw.
 - Para realizar la pruebas de actualización POST y lectura GET, sugiero utilizar el archivo de pruebas y el programa Postman.
 - Si todo funciona correctamente podrá ver mensajes de respuesta correspondiente.
 
