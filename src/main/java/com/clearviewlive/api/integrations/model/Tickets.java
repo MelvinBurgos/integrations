@@ -1,44 +1,40 @@
 package com.clearviewlive.api.integrations.model;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Tickets {
-
-    private int id;
-    private String key;
-    private List<Fields> fieldsList;
+    private List<Ticket> tickets = new ArrayList<>();
 
     public Tickets() {
     }
 
-    public Tickets(int id, String key, List<Fields> fieldsList) {
-        this.id = id;
-        this.key = key;
-        this.fieldsList = fieldsList;
+    public Tickets(List<Ticket> tickets) {
+        super();
+        this.tickets = tickets;
     }
 
-    public int getId() {
-        return id;
+    public List<Ticket> getTickets() {
+        return tickets;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
     }
 
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
-    public List<Fields> getFieldsList() {
-        return fieldsList;
-    }
-
-    public void setFieldsList(List<Fields> fieldsList) {
-        this.fieldsList = fieldsList;
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(Tickets.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append("tickets");
+        sb.append('=');
+        sb.append(((this.tickets == null) ? "<null>" : this.tickets));
+        sb.append(',');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
+        } else {
+            sb.append(']');
+        }
+        return sb.toString();
     }
 }

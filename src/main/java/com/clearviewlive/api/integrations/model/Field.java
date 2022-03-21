@@ -3,7 +3,7 @@ package com.clearviewlive.api.integrations.model;
 import java.util.Date;
 import java.util.List;
 
-public class Fields {
+public class Field {
     private int agentId;
     private String agentName;
     private Date startDate;
@@ -12,12 +12,12 @@ public class Fields {
     private String company;
     private boolean completed;
     private long totalDuration;
-    private List<SummaryStates> summaryStatesList;
+    private List<SummaryState> summaryStateList;
 
-    public Fields() {
+    public Field() {
     }
 
-    public Fields(int agentId, String agentName, Date startDate, String type, String priority, String company, boolean completed, long totalDuration, List<SummaryStates> summaryStatesList) {
+    public Field(int agentId, String agentName, Date startDate, String type, String priority, String company, boolean completed, long totalDuration, List<SummaryState> summaryStateList) {
         this.agentId = agentId;
         this.agentName = agentName;
         this.startDate = startDate;
@@ -26,7 +26,7 @@ public class Fields {
         this.company = company;
         this.completed = completed;
         this.totalDuration = totalDuration;
-        this.summaryStatesList = summaryStatesList;
+        this.summaryStateList = summaryStateList;
     }
 
     public int getAgentId() {
@@ -93,11 +93,11 @@ public class Fields {
         this.totalDuration = totalDuration;
     }
 
-    public List<SummaryStates> getSummaryStatesList() {
-        return summaryStatesList;
+    public List<SummaryState> getSummaryStatesList() {
+        return summaryStateList;
     }
 
-    public void setSummaryStatesList(List<SummaryStates> summaryStatesList) {
-        this.summaryStatesList = summaryStatesList;
+    public void setSummaryStatesList(List<SummaryState> summaryStateList) {
+        this.summaryStateList = summaryStateList;
     }
 }

@@ -1,14 +1,14 @@
 package com.clearviewlive.api.integrations.model;
 
-public class SummaryStates {
+public class SummaryState {
     private int id;
     private String name;
     private long duration;
 
-    public SummaryStates() {
+    public SummaryState() {
     }
 
-    public SummaryStates(int id, String name, long duration) {
+    public SummaryState(int id, String name, long duration) {
         this.id = id;
         this.name = name;
         this.duration = duration;
