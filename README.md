@@ -1,19 +1,26 @@
 # integrations
-Prueba técnica Focus
+# Prueba técnica Focus
 
-Datos de instalación
+## Datos de instalación
 - Se usó el IDE Intellij Community Edition 2021.1.3
-- el manejador de paquetes es Gradle.
+- el manejador de paquetes es Gradle 7.4.1
+- Usa la versión 17.0.2 2022-01-18 LTS de la JVM, Si se desea usar otra version es necesario hacer el cambio en archivo build.gradle y en las propiedades del proyecto.
+- El archivo de pruebas NO se incluye en el paquete. Es necesario colocar la dirección de la carpeta directamente en la propiedad url.archive
+- 
+### Los siguientes paquetes y dependencias son agregados por gradle.
 - La aplicación está construida con Spring Boot 2 y Spring Framework 5.
-- Usa la versión 17.0.2 2022-01-18 LTS de la JVM
-- El archivo de pruebas es parte del paquete y también se puede cambiar la URL directamente en la propiedad url.archive
-- Se usó el paquete de Parse Gson por ser un paquete sin problemas de seguridad y vigente.
+- Se usó el paquete Gson 2.9.0 y OpenCSV 5.6 por ser un paquetes sin problemas de seguridad y vigentes.
 
-Indicaciones de uso.
+## Indicaciones de uso.
 - el programa debe ser descargado y montado en el IDE de su preferencia.
-- una vez cargado debe actualizar las dependencias y cambiar la propiedad url.archive con la ubicación del archivo de pruebas
-- finalmente podrá ejecutar el programa y hacer las pruebas en su navegador.
-- Si el archivo de pruebas no es encontrado el explorador le mostrará el mensaje "Favor revisar el archivo de pruebas"
-- Si el archivo de pruebas no tiene el formato correcto mostrará el mensaje "Formato de archivo incorrecto"
-- Para realizar la pruebas de actualización POST, sugiero utilizar el archivo de pruebas y el programa Postman.
-- Se incluyen pruebas unitarias en este programa para verificar la integridad de los procesos.
+- una vez cargado debe actualizar las dependencias y cambiar en el archivo "application.properties", la propiedad "url.archive" con la ubicación del archivo de pruebas     "IntegrationTest.json".
+- Para realizar la pruebas de actualización POST y lectura GET, sugiero utilizar el archivo de pruebas y el programa Postman.
+- Si todo funciona correctamente podrá ver mensajes de respuesta correspondiente.
+
+## Errores comunes
+- Si el archivo de pruebas no es encontrado el explorador le mostrará el mensaje:
+  "An error has occurred, please check.C:\Users\[nombre]\IntegrationTest.json (The system cannot find the file specified)" 
+  en este caso favor revisar si el archivo tiene el nombre exacto "IntegrationTest.json" y la ubicación es la correcta y usa doble slash "\\"
+- Si el archivo de pruebas no tiene el formato correcto mostrará el mensaje:
+  "An error has occurred, please check.Cannot invoke "com.google.gson.JsonElement.isJsonArray()" because "node" is null"
+- Se incluyen pruebas unitarias básica de arranque.
